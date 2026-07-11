@@ -1,0 +1,35 @@
+# Secrets — never commit real values
+.env
+.env.*
+!.env.example
+*.token
+auth.json
+
+# Local strategy docs (kept private; delete a line to track it)
+distribution-plan.md
+test-army-setup.md
+#RUNBOOK.MD
+recap.md
+
+
+/.claude/
+# Python
+.venv/
+.venv-wsl/
+venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+
+# Node / Vite
+node_modules/
+dist/
+build/
+.vite/
+
+# Logs / scratch
+*.log
+
+# OS
+.DS_Store
+Thumbs.db

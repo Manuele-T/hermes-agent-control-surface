@@ -1,0 +1,1 @@
+{"root":["./src/App.tsx","./src/config.ts","./src/datasource.ts","./src/fleet.ts","./src/main.tsx","./src/vite-env.d.ts","./src/adapters/httpDataSource.ts","./src/components/Character.tsx","./src/components/CostHud.tsx","./src/components/HousekeepingPanel.tsx","./src/components/Room.tsx","./src/components/SidePanel.tsx"],"version":"5.9.3"}

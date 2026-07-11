@@ -1,0 +1,20 @@
+{"hook": "pre_llm_call", "task_id": "20260705_142115_f28823", "session_id": "20260705_142115_f28823", "profile": "researcher", "ts": 1783257679.3917575}
+{"hook": "pre_tool_call", "task_id": "20260705_142115_f28823", "session_id": "20260705_142115_f28823", "profile": "researcher", "ts": 1783257684.5254827, "tool_name": "kanban_show"}
+{"hook": "post_tool_call", "task_id": "20260705_142115_f28823", "session_id": "20260705_142115_f28823", "profile": "researcher", "ts": 1783257684.5350888, "tool_name": "kanban_show"}
+{"hook": "pre_tool_call", "task_id": "20260705_142115_f28823", "session_id": "20260705_142115_f28823", "profile": "researcher", "ts": 1783257692.5278676, "tool_name": "terminal"}
+{"hook": "post_tool_call", "task_id": "20260705_142115_f28823", "session_id": "20260705_142115_f28823", "profile": "researcher", "ts": 1783257692.729184, "tool_name": "terminal"}
+{"hook": "pre_tool_call", "task_id": "20260705_142115_f28823", "session_id": "20260705_142115_f28823", "profile": "researcher", "ts": 1783257696.9984026, "tool_name": "search_files"}
+{"hook": "pre_tool_call", "task_id": "20260705_142115_f28823", "session_id": "20260705_142115_f28823", "profile": "researcher", "ts": 1783257697.0017328, "tool_name": "search_files"}
+{"hook": "post_tool_call", "task_id": "20260705_142115_f28823", "session_id": "20260705_142115_f28823", "profile": "researcher", "ts": 1783257698.4840853, "tool_name": "search_files"}
+{"hook": "post_tool_call", "task_id": "20260705_142115_f28823", "session_id": "20260705_142115_f28823", "profile": "researcher", "ts": 1783257700.439036, "tool_name": "search_files"}
+{"hook": "pre_tool_call", "task_id": "20260705_142115_f28823", "session_id": "20260705_142115_f28823", "profile": "researcher", "ts": 1783257704.4959695, "tool_name": "read_file"}
+{"hook": "post_tool_call", "task_id": "20260705_142115_f28823", "session_id": "20260705_142115_f28823", "profile": "researcher", "ts": 1783257704.6098614, "tool_name": "read_file"}
+{"hook": "pre_tool_call", "task_id": "20260705_142115_f28823", "session_id": "20260705_142115_f28823", "profile": "researcher", "ts": 1783257710.032851, "tool_name": "read_file"}
+{"hook": "post_tool_call", "task_id": "20260705_142115_f28823", "session_id": "20260705_142115_f28823", "profile": "researcher", "ts": 1783257710.110927, "tool_name": "read_file"}
+{"hook": "pre_tool_call", "task_id": "20260705_142115_f28823", "session_id": "20260705_142115_f28823", "profile": "researcher", "ts": 1783257718.3300571, "tool_name": "write_file"}
+{"hook": "post_tool_call", "task_id": "20260705_142115_f28823", "session_id": "20260705_142115_f28823", "profile": "researcher", "ts": 1783257718.429934, "tool_name": "write_file"}
+{"hook": "pre_tool_call", "task_id": "20260705_142115_f28823", "session_id": "20260705_142115_f28823", "profile": "researcher", "ts": 1783257722.4176676, "tool_name": "read_file"}
+{"hook": "post_tool_call", "task_id": "20260705_142115_f28823", "session_id": "20260705_142115_f28823", "profile": "researcher", "ts": 1783257722.4861271, "tool_name": "read_file"}
+{"hook": "pre_tool_call", "task_id": "20260705_142115_f28823", "session_id": "20260705_142115_f28823", "profile": "researcher", "ts": 1783257731.2237353, "tool_name": "kanban_complete"}
+{"hook": "post_tool_call", "task_id": "20260705_142115_f28823", "session_id": "20260705_142115_f28823", "profile": "researcher", "ts": 1783257731.2471724, "tool_name": "kanban_complete"}
+{"hook": "post_llm_call", "task_id": "20260705_142115_f28823", "session_id": "20260705_142115_f28823", "profile": "researcher", "ts": 1783257737.6653132}

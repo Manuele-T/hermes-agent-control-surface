@@ -1,0 +1,12 @@
+# Render blueprint for the public synthetic-data demo (PLAN Step 7). Builds
+# the Dockerfile (frontend + backend in one image) and runs it with
+# HERMES_DATA_SOURCE=synthetic — no real Hermes, no token, read-only act().
+services:
+  - type: web
+    name: hermes-agent-control-surface-demo
+    runtime: docker
+    dockerfilePath: ./Dockerfile
+    plan: free
+    envVars:
+      - key: HERMES_DATA_SOURCE
+        value: synthetic
