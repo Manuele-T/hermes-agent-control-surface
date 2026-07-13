@@ -2,7 +2,7 @@
 
 **Your Hermes fleet as a room you can see into, and reach into.**
 
-Every other tool built on Hermes shows you a board. Rows, statuses, timestamps. You read them, then you go back to a terminal to actually do something. This one puts your agents in a room as characters, animates them with real telemetry, and lets you act on any of them by clicking: reassign, unblock, leave a note, spawn, approve, cancel.
+Most tools  built on Hermes show you a board. Rows, statuses, timestamps. You read them, then you go back to a terminal to actually do something. This one puts your agents in a room as characters, animates them with real telemetry, and lets you act on any of them by clicking: reassign, unblock, leave a note, spawn, approve, cancel.
 
 The room is the skin. The control is the point.
 
@@ -12,7 +12,7 @@ The room is the skin. The control is the point.
 
 Once you run more than two Hermes workers, the interesting question stops being *what is the state of the board* and becomes *what is that agent doing right now, and can I stop it*.
 
-A Kanban list cannot answer that. It tells you a card is "in progress". It does not tell you the worker has been stuck in a retry loop for six minutes, or that it is sitting on a blocked `rm -rf` prompt in a terminal you closed an hour ago, or that the researcher is about to grep half your filesystem.
+A Kanban list does not answer that. It tells you a card is "in progress". It does not tell you the worker has been stuck in a retry loop for six minutes, or that it is sitting on a blocked `rm -rf` prompt in a terminal you closed an hour ago, or that the researcher is about to grep half your filesystem.
 
 So this reads what Hermes actually persists (its Kanban SQLite DB, and each worker's own session store) and turns it into something you can watch and interrupt.
 
@@ -26,7 +26,7 @@ So this reads what Hermes actually persists (its Kanban SQLite DB, and each work
 
 The feature I am proudest of, and the one that was hardest to earn.
 
-When a Kanban worker hits a dangerous command, Hermes blocks on a local, no-TTY prompt. There is no public remote-resolution API. The worker just sits there, invisible, waiting for a keystroke on a terminal that in a headless fleet does not exist.
+When a Kanban worker hits a dangerous command, Hermes blocks on a local, no-TTY prompt. As far as I could find, there is no public remote-resolution API. The worker just sits there, invisible, waiting for a keystroke on a terminal that in a headless fleet does not exist.
 
 The `hermesboard-sensor` plugin bridges that gap: it opts the worker into Hermes's gateway-style approval queue and resolves it through a private internal function, guarded end to end so that a Hermes upgrade which moves that function degrades to telemetry-only instead of crashing your worker. The bridge never activates for an interactive TTY or a cron job.
 
