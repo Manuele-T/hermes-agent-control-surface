@@ -2,7 +2,7 @@
 
 **Your Hermes fleet as a room you can see into, and reach into.**
 
-Most tools  built on Hermes show you a board. Rows, statuses, timestamps. You read them, then you go back to a terminal to actually do something. This one puts your agents in a room as characters, animates them with real telemetry, and lets you act on any of them by clicking: reassign, unblock, leave a note, spawn, approve, cancel.
+Most tools built on Hermes show you a board. Rows, statuses, timestamps. You read them, then you go back to a terminal to actually do something. This one puts your agents in a room as characters, animates them with real telemetry, and lets you act on any of them by clicking: reassign, unblock, leave a note, spawn, approve, cancel.
 
 The room is the skin. The control is the point.
 
@@ -22,7 +22,7 @@ So this reads what Hermes actually persists (its Kanban SQLite DB, and each work
 
 ![The room](docs/01.jpeg)
 
-## Embodied approvals
+## Live approvals
 
 The feature I am proudest of, and the one that was hardest to earn.
 
@@ -30,7 +30,7 @@ When a Kanban worker hits a dangerous command, Hermes blocks on a local, no-TTY 
 
 The `hermesboard-sensor` plugin bridges that gap: it opts the worker into Hermes's gateway-style approval queue and resolves it through a private internal function, guarded end to end so that a Hermes upgrade which moves that function degrades to telemetry-only instead of crashing your worker. The bridge never activates for an interactive TTY or a cron job.
 
-What you see is a character raising its hand with a live countdown. You approve or deny from the side panel. The agent carries on.
+What you see is a notification on screen with a live countdown. You approve or deny from the side panel. The agent carries on.
 
 ![Approval flow](docs/02.jpeg)
 
@@ -45,9 +45,29 @@ HERMES_DATA_SOURCE=synthetic ./run.sh
 
 No token, no Kanban DB, nothing touched on your machine. A `render.yaml` blueprint is included if you want to host it.
 
+Live demo (synthetic, read-only): https://hermes-agent-control-surface-demo.onrender.com/
+
 ![Task detail](docs/03.jpeg)
 
 ## Run it for real
+
+### Docker (recommended — no Python or Node required)
+
+```bash
+docker run --rm -p 8124:8123 \
+  -v ~/.hermes:/root/.hermes:ro \
+  ghcr.io/manuele-t/hermes-agent-control-surface:latest
+```
+
+Open **http://127.0.0.1:8124**. The `:ro` mount gives the container read-only access to your Hermes data. Drop `:ro` if you want write actions (reassign, cancel, spawn) to work via the CLI fallback.
+
+Sanity check:
+```bash
+curl -s 127.0.0.1:8124/health
+# expect "adapter":"SessionsAdapter" and kanban_db_path -> ~/.hermes/kanban.db
+```
+
+### Clone and run (for contributors / dev mode)
 
 ```bash
 cp .env.example .env
@@ -74,6 +94,10 @@ You need [Hermes Agent](https://github.com/nousresearch/hermes-agent) installed 
 - [`DISCOVERY.md`](DISCOVERY.md) — field notes on this Hermes install's real internals: DB schemas, Bearer-gated REST routes, the gateway/dispatch model, the hook firing matrix. Everything here is grounded in that.
 - [`IMPLEMENTATION-NOTES.md`](IMPLEMENTATION-NOTES.md) — the per-feature build log, including the live-bug investigations.
 
+## License
+
+MIT — see [`LICENSE`](LICENSE). Use it, fork it, build on it.
+
 ---
 
 <details>
@@ -98,7 +122,7 @@ hermes -p <profile> gateway run
 
 On startup the backend logs a clear warning (never a crash) if the Kanban DB, dashboard, or built frontend is missing, naming the exact path or URL it checked.
 
-Sanity check (port 8124 via `run.sh`, 8123 in dev mode below):
+Sanity check:
 
 ```bash
 curl -s 127.0.0.1:8124/health
